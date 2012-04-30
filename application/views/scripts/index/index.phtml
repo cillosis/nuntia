@@ -1,0 +1,47 @@
+
+<!--<span class="search-box">
+    <input type="text" value="Search..."> 
+</span><br><br>-->
+
+<h2 class="box-title">Newest Posts</h2>
+<div class="display-box">
+    <?php 
+        foreach($this->recent_posts as $post)
+        {
+            $url = APPLICATION_URL . '/post/show/' . $post->id;
+            echo('<a href='.$url.'>'.$post->title.'</a>');
+            echo(' - '.$post->price);
+            echo(' in '.$post->location.'<br>');
+        }
+    ?>
+</div><br>
+
+<h2 class="box-title">Categories</h2>
+<div class="display-box">
+<?php
+
+    $num_columns = 4;
+    $col_count = 0;
+
+    echo("<table class='categories-table'>\n<tr>\n");
+        foreach($this->categories as $category)
+        {
+            if($col_count < $num_columns)
+            {
+                $col_count++;
+                echo("<td>\n");
+                echo("<a href='#'>" . $category->name . "</a><br />");
+                echo("</td>\n");
+            }
+            elseif($col_count == $num_columns)
+            {
+                $col_count = 0;
+                echo("<td>\n");
+                echo("<a href='#'>" . $category->name . "</a><br />");
+                echo("</td>\n");
+                echo("</tr><tr>\n");
+            }
+        }
+    echo("</tr>\n</table>\n");
+?>
+</div>

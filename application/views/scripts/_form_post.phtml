@@ -1,0 +1,44 @@
+<form id="post" action="<?php echo $this->element->getAction(); ?>" 
+      method="<?php echo $this->element->getMethod(); ?>">
+
+
+<table>
+    <tr>
+        <td>Posting Title:</td>
+        <td>Price:</td>
+        <td>Specific Location:</td>
+    </tr>
+    <tr>
+        <td><?php echo $this->element->title; ?></td>
+        <td><?php echo $this->element->price; ?></td>
+        <td><?php echo $this->element->location; ?></td>
+    </tr>
+</table>
+
+<hr>
+
+<table>
+    <tr>
+        <td>Your Email Address:</td>
+        <td>Verify Email Address:</td>
+    </tr>
+    <tr>
+        <td><?php echo $this->element->email; ?></td>
+        <td><?php echo $this->element->emailverify; ?></td>
+    </tr>
+</table>
+
+<p>
+    Posting Description:<br />
+    <?php echo $this->element->posting; ?>
+</p>
+
+<p>
+    
+</p>
+    <?php echo $this->element->imagebtn; ?>
+<p>
+    <?php echo $this->element->submit; ?>
+</p>
+
+</form>

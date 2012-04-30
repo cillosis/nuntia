@@ -1,0 +1,20 @@
+<h2 class="box-title">Post New Ad</h2>
+<div class="display-box">
+    
+    <?php 
+    
+        if($this->hasFormErrors)
+        {
+            echo('<div id="form-error">');
+            foreach($this->postForm->getMessages() as $message)
+            {
+                echo("Error: " . $message[0] . "<br>");
+            }
+            echo('</div>');
+        }
+
+        // Display form
+        echo $this->postForm;
+
+    ?>
+</div>

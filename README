@@ -1,0 +1,13 @@
+################################################################
+## @Title:      Nuntia Classifieds v0.1
+## @Author:     Jeremy Harris (cillosis@gmail.com)
+## @Web         http://www.jeremyharris.me
+##      
+## @About:      Nuntia is an Open Source 
+##              classified ads web application created as 
+##              a portfolio piece by the author. Written 
+##              in PHP5 and using MySQL for data storage.
+##
+## @License:    GNU General Public License, version 3 (GPL-3.0)
+##              http://www.opensource.org/licenses/gpl-3.0.html
+################################################################

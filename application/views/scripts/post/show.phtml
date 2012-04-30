@@ -1,0 +1,31 @@
+<h2 class="box-title"><?php echo($this->post->title); ?></h2>
+<div class="display-box">
+    
+    <span class="post-title">
+        <?php echo($this->post->title); ?>
+    </span>
+    
+    <span class="post-price">
+        (<?php echo($this->post->price); ?>)
+    </span>
+    
+    <span class="post-location">
+        in <?php echo($this->post->location); ?><hr>
+    </span>
+    
+    <?php echo($this->post->post); ?><br><br>
+    
+    <?php
+        try {
+            $post_date = new DateTime($this->post->created_on);
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+        
+        $post_date = $post_date->format('g:ia \o\n l jS F Y');
+    ?>
+    
+    <span class="post-date">
+        Posted On: <?php echo($post_date); ?>
+    </span>
+</div>

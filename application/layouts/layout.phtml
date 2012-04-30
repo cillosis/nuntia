@@ -1,0 +1,54 @@
+<?php
+
+// Setup CSS
+$this->headLink()->appendStylesheet($this->baseUrl().'/css/main.css');
+
+?>
+
+<?php echo $this->doctype()."\n"; ?>
+<html>
+    <head>
+        <?php echo $this->headTitle()."\n"; ?>
+        <?php echo $this->headMeta()."\n"; ?>
+        <?php echo $this->headLink()."\n"; ?>
+        <?php echo $this->headStyle()."\n"; ?>
+        <?php echo $this->headScript(); ?>
+        <?php echo $this->inlineScript(); ?> 
+    </head>
+    <body>
+        
+        <div class="container">
+            <div class="header">
+                <img src="<?php echo($this->baseUrl()); ?>/images/logo.png">
+                <div class="nav">
+                    <ul>
+                        <?php
+                            if(isset($this->nav) && is_object($this->nav))
+                            {
+                                foreach($this->nav->links as $link)
+                                {
+                                    echo("<li id=");
+                                      if($link->active) 
+                                        { echo("'activelink'"); }
+                                    echo(">\n");
+                                    echo("<a href='" . APPLICATION_URL . $link->url . "'>");
+                                        echo($link->title);
+                                    echo("</a>\n");
+                                }
+                            }
+                        ?>
+                    </ul>
+                </div>
+            </div><br>
+            
+            <div class="bread-crumbs"></div><br>
+            
+            <div class="content-box">
+                <?php echo $this->layout()->content; ?>
+            </div>
+        </div>
+        <div class="footer">
+            &copy;Jeremy Harris 2012
+        </div>
+    </body>
+</html>
